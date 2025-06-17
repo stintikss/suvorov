@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 const Coockie: React.FC = () => {
-    const navigate = useNavigate();
 
     //ХУКИ:
 
