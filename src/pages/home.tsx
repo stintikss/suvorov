@@ -6,7 +6,7 @@ import { Title } from "../tools/API";
 import { AnimatedShapes, arrowDoubleAnimation, headerCardAnimation, MainAnimation } from "../tools/Animate/AnimatedShapes";
 import { Telegram, Discord, TikTok, Steam, Arrow, ArrowDouble } from "../image/svg";
 import { useScrollEffect } from '../tools/proccesor'
-// import { Menu } from '../ui/menu'
+import { Menu } from '../ui/menu'
 import { skillData } from "../tools/skillData";
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
   
   return (
     <>
-      {/* <Menu /> */}
+      <Menu />
       <div>
         <header className='relative w-full h-screen bg-[linear-gradient(135deg,var(--primary-color)_0%,var(--secondary-color)_33%,var(--tertiary-color)_66%)]'>
           <AnimatedShapes hideShapnes={circle} />

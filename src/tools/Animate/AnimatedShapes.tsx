@@ -8,7 +8,7 @@ export const AnimatedShapes = ({ hideShapnes }: AnimatedShapesProps) => {
   return (
     <>
       <AnimatePresence>
-        {!hideShapnes && (
+        {!hideShapnes ? (
           <motion.div
             style={{
               position: 'fixed',
@@ -34,10 +34,10 @@ export const AnimatedShapes = ({ hideShapnes }: AnimatedShapesProps) => {
               scale: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
             }}
           />
-        )}
+        ) : null}
       </AnimatePresence>
       <AnimatePresence>
-        {!hideShapnes && (
+        {!hideShapnes ? (
           <motion.div
             style={{
               position: 'fixed',
@@ -65,11 +65,11 @@ export const AnimatedShapes = ({ hideShapnes }: AnimatedShapesProps) => {
               scale: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
             }}
           />
-        )}
+        ) : null}
       </AnimatePresence>
 
       <AnimatePresence>
-        {!hideShapnes && (
+        {!hideShapnes ? (
           <motion.div
             style={{
               position: 'fixed',
@@ -98,7 +98,7 @@ export const AnimatedShapes = ({ hideShapnes }: AnimatedShapesProps) => {
               scale: { duration: 15, repeat: Infinity, ease: 'easeInOut' },
             }}
           />
-        )}
+        ) : null}
       </AnimatePresence>
     </>
   );
