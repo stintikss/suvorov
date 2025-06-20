@@ -9,7 +9,7 @@ const SplashScreenHelper: React.FC = () => {
 
     useEffect(() => {
       setTimeout(() => {
-        setLoading(false)
+        setLoading(true)
       }, 3000);
     })
 
