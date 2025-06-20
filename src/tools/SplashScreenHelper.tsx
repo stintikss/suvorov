@@ -5,11 +5,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const SplashScreenHelper: React.FC = () => {
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
       setTimeout(() => {
-        setLoading(true)
+        setLoading(false)
       }, 3000);
     })
 
