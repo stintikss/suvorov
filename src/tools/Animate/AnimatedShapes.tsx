@@ -184,3 +184,47 @@ export const menuAnimation = () => ({
     }
   }
 })
+
+export const NotFoundAnimate = () => ({
+  initial: {
+    opacity: 0,
+    scale: 0.9,
+    y: 10
+  },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    y: 0
+  },
+  transition: {
+    duration: 0.6,
+    ease: 'easeInOut'
+  }
+})
+
+export const SmileAnimate = () => ({
+  animate: {
+    rotate: [0, 10, -10, 10, 0]
+  },
+  transition: {
+    duration: 1,
+    repeat: Infinity,
+    repeatDelay: 2
+  }
+})
+
+export const ButtonNotFound = () => ({
+  initial: {
+    opacity: 0,
+    scale: 0.8
+  },
+  animate: {
+    opacity: 1,
+    scale: 1
+  },
+  transition: {
+    duration: 1,
+    ease: 'easeInOut',
+    delay: 0.5
+  }
+})
