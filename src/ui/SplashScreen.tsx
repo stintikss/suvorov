@@ -1,6 +1,6 @@
 import React from 'react';
 import test from '../image/test.jpg';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const SplashScreen: React.FC = () => {
   return (
