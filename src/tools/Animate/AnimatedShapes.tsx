@@ -228,3 +228,35 @@ export const ButtonNotFound = () => ({
     delay: 0.5
   }
 })
+
+export const MenuOpenAnimate = (open: boolean) => ({
+  initial: { opacity: 1, scale: 1 },
+  animate: {
+    scale: open ? 0.5 : 1,
+    opacity: open ? 0 : 1,
+    transition: {
+      duration: open ? 0.4 : 0.3,
+      ease: 'easeInOut',
+    },
+  },
+});
+
+
+export const MenuContentAnimate = (open: boolean) => ({
+  initial: {
+    x: 170
+  },
+  animate: open ? {
+    x: -40,
+    transition: {
+      duration: 0.6,
+      delay: 0.4
+    }
+  } : {
+    x: 170,
+    transition: {
+      duration: 0.5,
+      delay: 0
+    }
+  }
+})

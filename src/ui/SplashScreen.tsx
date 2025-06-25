@@ -1,42 +1,55 @@
-import React from 'react';
-import test from '../image/test.jpg';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
-const SplashScreen: React.FC = () => {
+const Loader = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const randomTimeout = Math.floor(Math.random() * 1500) + 500;
+    
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, randomTimeout);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <motion.div
-      className="w-full h-screen flex justify-center items-center relative overflow-hidden"
-      style={{ background: 'var(--splash-bg-initial-color)' }}
-    >
-      <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-yellow-500 blur-3xl opacity-30 animate-pulse" />
-      <motion.img
-        src={test}
-        className="w-40 h-40 object-cover select-none pointer-events-none rounded-full shadow-[0_0_50px_rgba(255,255,255,0.1)] z-10"
-        draggable={false}
-        loading="eager"
-        decoding="sync"
-        fetchPriority="high"
-        animate={{
-          scale: [1, 1.05, 1, 1.05, 1],
-          rotate: [0, 3, -3, 3, 0]
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: 'easeInOut'
-        }}
-      />
-
-    <div className="absolute bottom-10 text-white text-lg tracking-widest font-semibold z-10 flex items-center">
-      Загрузка
-      <div className="loading-dots ml-2">
-        <span>.</span>
-        <span>.</span>
-        <span>.</span>
-      </div>
-    </div>
-    </motion.div>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div 
+          className="fixed inset-0 bg-[#0a0a0a] z-[9999] flex items-center justify-center"
+          initial={{ opacity: 1 }}
+          exit={{ 
+            opacity: 0,
+            transition: { 
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1]
+            }
+          }}
+        >
+          <motion.div
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.5,
+              ease: "linear"
+            }}
+            style={{
+              width: '64px',
+              height: '64px',
+              border: '4px solid #3b3b3b',
+              borderTopColor: '#646cff',
+              borderRadius: '50%',
+              boxSizing: 'border-box'
+            }}
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
-export default SplashScreen;
+export default Loader;

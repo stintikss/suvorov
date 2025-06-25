@@ -25,12 +25,12 @@ export const Title = ({ text }: TitleProps) => {
         fontFamily: '"Ubuntu", sans-serif',
         color: '#ffffff',
         fontWeight: '500',
-        fontSize: '23px'
+        fontSize: '22px',
     }
 
   return (
-    <div>
-      {showDefault ? <span style={{...styleText}}>{text}</span> : <span style={{...styleText}}>Suvorov District</span>}
+    <div className="mb-[10px]">
+      {showDefault ? <span style={{...styleText}}>{text}</span> : <span style={{...styleText}}>DevTrip Frontend</span>}
     </div>
   );
 };
@@ -55,7 +55,7 @@ export const Forme = () => {
 
     if (res.ok) {
       setStatus("success");
-      form.reset(); // очищаем форму
+      form.reset();
     } else {
       setStatus("error");
     }
@@ -63,27 +63,20 @@ export const Forme = () => {
 
   return (
     <>
-      <div className="max-w-lg mx-auto p-6 bg-[#1a1a1a] rounded-xl">
+      <div className="w-126 p-6 bg-[#1a1a1a] rounded-xl">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="text"
             name="name"
             placeholder="Ваше имя"
             required
-            className="p-3 rounded-md text-black"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Ваш email"
-            required
-            className="p-3 rounded-md text-black"
+            className="p-3 rounded-md text-white focus:outline-none border border-gray-600"
           />
           <textarea
             name="message"
             placeholder="Ваше сообщение"
             required
-            className="p-3 rounded-md text-black"
+            className="p-3 rounded-md text-white focus:outline-none border border-gray-600"
             rows={5}
           />
           <button
